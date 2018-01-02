@@ -3,5 +3,5 @@ project(arrays)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp)
+set(SOURCE_FILES Main.cpp)
 add_executable(arrays ${SOURCE_FILES})
