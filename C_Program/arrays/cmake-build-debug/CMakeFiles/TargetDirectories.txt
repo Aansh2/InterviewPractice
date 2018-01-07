@@ -1,0 +1,3 @@
+/home/nikhil/workspace/InterviewPractice/C_Program/arrays/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/nikhil/workspace/InterviewPractice/C_Program/arrays/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/nikhil/workspace/InterviewPractice/C_Program/arrays/cmake-build-debug/CMakeFiles/arrays.dir
