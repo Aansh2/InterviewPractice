@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+    <bean id="helloWorld" class="com.model.HelloWorld" init-method="init" destroy-method="destroy"
+          autowire="byType">
+        <property name="message" value="Hello World!"/>
+        <!-- <constructor-arg ref="helloIndia"/> --> <!-- autowire="byType" is defined in the bean tag-->
+
+        <constructor-arg type="java.lang.String" value="Zara"/>
+        <constructor-arg index="1"  type="int" value="20"/>
+
+        <property name="addressList" >
+            <list>
+                <value>India</value>
+                <value>UK</value>
+                <ref bean="helloIndia"></ref>
+            </list>
+        </property>
+
+        <!-- results in a setAddressMap(java.util.Map) call -->
+        <property name="addressMap">
+            <map>
+                <entry key="1" value="INDIA"/>
+                <entry key="2" value="UK"/>
+                <entry key="3" value="USA"/>
+                <entry key="4" value="USA"/>
+                <entry key ="5" value-ref="helloIndia"/>
+                <entry key="6"><null/></entry>
+            </map>
+        </property>
+
+    </bean>
+    <bean id ="helloIndia" class="com.model.HelloIndia" >
+
+    </bean>
+</beans>

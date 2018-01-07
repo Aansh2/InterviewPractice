@@ -22,7 +22,7 @@ public class Main {
     public static void main(String [] args) {
         ApplicationContext ctx = SpringApplication.run(Main.class, args);
         HelloWorld helloWorld = (HelloWorld) ctx.getBean("helloWorld");
-        helloWorld.sayHello();
+        helloWorld.sayHelloFromWorld();
 
 
     }

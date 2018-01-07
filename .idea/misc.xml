@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/Java_Program/MyExample/pom.xml" />
         <option value="$PROJECT_DIR$/Java_Program/SpringExample/basic/pom.xml" />
+        <option value="$PROJECT_DIR$/Java_Program/SpringExample/SpringBootCRUDApplicationExample/pom.xml" />
       </list>
     </option>
   </component>
