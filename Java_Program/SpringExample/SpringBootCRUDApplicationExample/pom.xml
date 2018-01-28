@@ -5,7 +5,7 @@
 	<groupId>com.websystique.springboot</groupId>
 	<artifactId>SpringBootCRUDApplicationExample</artifactId>
 	<version>1.0.0</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>SpringBootCRUDApplicationExample</name>
 
@@ -57,14 +57,29 @@
     		<artifactId>commons-lang3</artifactId>
     		<version>3.5</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
-			<plugin><!-- Include if you want to make an executable jar[FAT JAR which 
+			<!--<plugin>&lt;!&ndash; Include if you want to make an executable jar[FAT JAR which
 					includes all dependencies along with sprinboot loader] that you can run on 
-					commandline using java -jar NAME -->
+					commandline using java -jar NAME &ndash;&gt;
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>-->
+			 <plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.0</version>
+ 				 <configuration>
+
+					 <warName>SpringBootCRUDApp</warName>
+				 </configuration>
 			</plugin>
 		</plugins>
 	</build>

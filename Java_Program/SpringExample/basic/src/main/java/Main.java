@@ -1,7 +1,6 @@
 
 import com.model.HelloWorld;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import org.springframework.context.ApplicationContext;
 
 import java.util.ArrayList;
@@ -16,11 +15,11 @@ import java.util.*;
 /**
  * Created by nikhil on 11/9/16.
  */
-@SpringBootApplication
+//@SpringBootApplication
 public class Main {
 
     public static void main(String [] args) {
-        ApplicationContext ctx = SpringApplication.run(Main.class, args);
+        ApplicationContext ctx =null;// SpringApplication.run(Main.class, args);
         HelloWorld helloWorld = (HelloWorld) ctx.getBean("helloWorld");
         helloWorld.sayHelloFromWorld();
 

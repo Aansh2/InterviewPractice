@@ -4,7 +4,7 @@ server:
   contextPath: /SpringBootCRUDApp
 ---
 spring:
-  profiles: local, default
+  profiles: default
 datasource:
   sampleapp:
     url: jdbc:h2:~/test

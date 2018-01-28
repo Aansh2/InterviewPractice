@@ -54,7 +54,7 @@ public class JpaConfiguration {
 	/*
 	 * Configure HikariCP pooled DataSource.
 	 */
-	@Bean
+	/*@Bean
 	public DataSource dataSource() {
 		DataSourceProperties dataSourceProperties = dataSourceProperties();
 			HikariDataSource dataSource = (HikariDataSource) DataSourceBuilder
@@ -67,6 +67,20 @@ public class JpaConfiguration {
 					.build();
 			dataSource.setMaximumPoolSize(maxPoolSize);
 			return dataSource;
+	}*/
+	@Bean
+	public DataSource dataSource() {
+		DataSourceProperties dataSourceProperties = dataSourceProperties();
+		HikariDataSource dataSource = (HikariDataSource) DataSourceBuilder
+				.create(dataSourceProperties.getClassLoader())
+				.driverClassName("org.h2.Driver")
+				.url("jdbc:h2:~/test")
+				.username("SA")
+				.password("")
+				.type(HikariDataSource.class)
+				.build();
+		dataSource.setMaximumPoolSize(maxPoolSize);
+		return dataSource;
 	}
 
 	/*
@@ -78,7 +92,7 @@ public class JpaConfiguration {
 		factoryBean.setDataSource(dataSource());
 		factoryBean.setPackagesToScan(new String[] { "com.websystique.springboot.model" });
 		factoryBean.setJpaVendorAdapter(jpaVendorAdapter());
-		factoryBean.setJpaProperties(jpaProperties());
+		factoryBean.setJpaProperties(jpaPropertiesFrom());
 		return factoryBean;
 	}
 
@@ -105,6 +119,17 @@ public class JpaConfiguration {
 		}
 		return properties;
 	}
+
+	private Properties jpaPropertiesFrom() {
+		Properties properties = new Properties();
+		properties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect" );
+		properties.put("hibernate.hbm2ddl.auto", "create-drop");
+		properties.put("hibernate.show_sql",  "true");
+		properties.put("hibernate.format_sql", "true");
+
+		return properties;
+	}
+
 
 	@Bean
 	@Autowired

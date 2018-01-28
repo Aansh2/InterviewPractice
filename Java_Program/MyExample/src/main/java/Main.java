@@ -9,6 +9,7 @@ import java.util.IdentityHashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.*;
+import java.util.LinkedList;
 
 /**
  * Created by nikhil on 11/9/16.
@@ -17,19 +18,25 @@ import java.util.*;
 public class Main {
 
     public static void main(String [] args) {
-        LinkedHashSet  set = new LinkedHashSet();
-        set.add(null);
-        set.add(new Employee("Nikk",1));
-        Set syncSet = (Set) Collections.synchronizedSet(set);
-        set=null;
-        syncSet.add("ni");
-        System.out.print("Done");
+        makeMap();
     }
 
-    private void makeMap(){
+    private static  void makeMap(){
         Map map = new HashMap<Employee,String>();
         map.put(new Employee("Nikhil",1),"me");
-
+        map.put(new Employee("vd",1),"me");
+        map.put(new Employee("Nikvdhil",1),"me");
+        map.put(new Employee("vv",1),"me");
+        map.put(new Employee("vv",1),"me");
+        map.put(new Employee("Nikbhil",1),"me");
+        map.put(new Employee("Nikmhil",1),"me");
+        map.put(new Employee("Nikhnil",1),"me");
+        map.put(new Employee("Nilkhil",1),"me");
+        map.put(new Employee("Nikh,il",1),"me");
+        map.put(new Employee("Nikhil",1),"me");
+        map.put(new Employee("Nikuhil",1),"me");
+        map.put(new Employee("Nikuhil",1),"me");
+        map.put(new Employee("Nikwwhil",1),"me");
         new  IdentityHashMap<String,String>();
         new Hashtable<String,String>();
         LinkedHashMap linkedHashMap =  new LinkedHashMap<Employee,String>();
