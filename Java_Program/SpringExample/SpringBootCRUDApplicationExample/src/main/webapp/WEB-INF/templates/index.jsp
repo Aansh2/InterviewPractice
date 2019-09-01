@@ -16,5 +16,13 @@
         <script src="static/js/app/app.js"></script>
         <script src="static/js/app/UserService.js"></script>
         <script src="static/js/app/UserController.js"></script>
+
+         <script src="js/lib/angular.min.js" ></script>
+                <script src="static/js/lib/angular-ui-router.min.js" ></script>
+                <script src="static/js/lib/localforage.min.js" ></script>
+                <script src="static/js/lib/ngStorage.min.js"></script>
+                <script src="static/js/app/app.js"></script>
+                <script src="static/js/app/UserService.js"></script>
+                <script src="static/js/app/UserController.js"></script>
     </body>
 </html>

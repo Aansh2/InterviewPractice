@@ -47,11 +47,11 @@ public class WebAppInitializer extends WebMvcConfigurerAdapter {
     }
 
 
-   @Bean
+  // @Bean
     public FreeMarkerViewResolver freemarkerViewResolver() {
         FreeMarkerViewResolver resolver = new FreeMarkerViewResolver();
         resolver.setCache(false);
-        resolver.setPrefix("/templates/");
+       resolver.setPrefix("/templates/");
         resolver.setSuffix(".ftl");
         return resolver;
     }
@@ -65,7 +65,7 @@ public class WebAppInitializer extends WebMvcConfigurerAdapter {
         return viewResolver;
     }*/
 
-    @Bean
+   // @Bean
     public FreeMarkerConfigurer freeMarkerConfigurer(WebApplicationContext applicationContext)
             throws IOException, TemplateException {
         FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
