@@ -3,6 +3,8 @@ package com.DS;
 import com.model.Employee;
 import com.model.PersonMap;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -129,7 +131,7 @@ public class MyAllMap {
     }
   }
 
-  public static void AllMap() {
+  public static void AllMap() throws IOException {
     /* C
      * HashMap
      * Does not maintain any order
@@ -165,11 +167,47 @@ public class MyAllMap {
 
     Collections.synchronizedMap(hashMap);
     /*
-     *  P
+     *  C
      * LinkedHashMap It maintains insertion order.
-     *
+     * Java LinkedHashMap maintains insertion order.
      */
 
     new LinkedHashMap<>().put("", "");
+
+    /*
+     * C - Java TreeMap class
+     *
+     *TreeMap is a Red-Black tree based NavigableMap implementation.In other words,
+     * it sorts the TreeMap object keys using Red-Black tree algorithm.
+     * #The great thing about it is that you can find some objects using different filters and conditions.
+     *
+     */
+     TreeMap treemap = new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
+    treemap = new TreeMap<String, String>(Comparator.reverseOrder());
+    treemap.put("A", "value");
+    treemap.get("");
+    SortedMap m = Collections.synchronizedSortedMap(new TreeMap());
+
+
+    /*
+    * P - Property
+    * The Properties class represents a persistent set of properties.
+    * The Properties can be saved to a stream or loaded from a stream.
+    * Each key and its corresponding value in the property list is a string.
+    *
+    * Because Properties inherits from Hashtable, the put and putAll methods can be applied to a Properties object.
+    * Their use is strongly discouraged as they allow the caller to insert
+    * entries whose keys or values are not Strings. The setProperty method should be used instead.
+    */
+    Properties properties = new Properties();
+    properties.store( new FileWriter("data/props.properties"), "These are properties");
+    //properties.setProperty(new Integer(1), new String(""));
+
+    /*
+    * C Collections
+    *
+    */
+
+    Collections.max(new ArrayList<String>(Arrays.asList("E","A","Z")));
   }
 }
