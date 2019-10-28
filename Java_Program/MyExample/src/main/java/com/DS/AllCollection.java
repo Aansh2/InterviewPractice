@@ -1,8 +1,9 @@
 package com.DS;
 
-import java.util.Stack;
-import java.util.*;
-import java.util.stream.Stream;
+
+
+ import java.util.*;
+ import java.util.stream.Stream;
 
 public class AllCollection {
 
@@ -42,7 +43,7 @@ public class AllCollection {
     arrayList.add("zNikhil Soni");
     arrayList.add("Ruby Soni");
     arrayList.add("ABC Soni");
-
+     arrayList.addAll(weekDays);
     //  treeSet.add((String)null);
     // treeSet.add(null);
 
@@ -143,8 +144,15 @@ public class AllCollection {
 
     /*
     * Dequeue implementaion is  ArrayDeque
-    *
+    * Application of Undo function
     * */
+    ArrayDeque arrayDeque  = new ArrayDeque<>();
+    arrayDeque.add("a");
+     /*
+    *  Stack internally uses Vector
+    *
+    */
+    List stk = new Stack();
 
   }
 }

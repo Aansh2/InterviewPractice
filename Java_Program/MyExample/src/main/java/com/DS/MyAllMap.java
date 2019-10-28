@@ -191,6 +191,7 @@ public class MyAllMap {
 
     /*
     * P - Property
+    * Note : it is for String key value only
     * The Properties class represents a persistent set of properties.
     * The Properties can be saved to a stream or loaded from a stream.
     * Each key and its corresponding value in the property list is a string.
@@ -209,5 +210,13 @@ public class MyAllMap {
     */
 
     Collections.max(new ArrayList<String>(Arrays.asList("E","A","Z")));
+
+    /*
+    * Comparator and comparable both are interface.
+    * Comparator = compare method for compare two other objects
+    * Comparable  = compareTo method is use for compare this to other object
+    * Example is = Collections.sort(list) , Collection.sort(list, Comparator)
+    */
+
   }
 }
