@@ -3,6 +3,7 @@ package com.thread.program;
 import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatcH {
+  // Exmaple -- websocket to hold currect thread  wait  till websocket close use latch with 1
   public static void main(String[] args) throws InterruptedException {
     // Let us create task that is going to
     // wait for four threads before it starts

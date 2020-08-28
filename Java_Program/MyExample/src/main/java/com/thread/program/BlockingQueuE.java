@@ -28,7 +28,7 @@ public class BlockingQueuE {
                 while(true) {
                     try {
                         blockingQueueMy.dequeue();
-                        Thread.currentThread().sleep(10);
+                        Thread.currentThread().sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -45,6 +45,8 @@ public class BlockingQueuE {
     }
 
     public synchronized void enqueue(Long s) throws InterruptedException {
+        System.out.println("enqueue "+ list.size());
+
         if(list.size() == limit){
             System.out.println("List is full, Waiting for consumer ");
             wait();
@@ -52,16 +54,19 @@ public class BlockingQueuE {
         System.out.println("Adding");
 
         this.list.add(s);
-        if(list.size() == limit)
+      //  if(list.size() == limit)
             this.notifyAll();
     }
     public synchronized Object dequeue() throws InterruptedException {
+        System.out.println("dequeue "+ list.size());
+
         if(this.list.size() < 1 ){
             System.out.println("List is Empty, Waiting for Producer ");
             wait();
         }
         Long lst = (Long) this.list.removeLast();
         System.out.println("Removing -- "+lst);
+        this.notifyAll();
        return  lst;
 
     }
